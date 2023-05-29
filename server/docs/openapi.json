@@ -1,0 +1,67 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "InfoJobs Tech API",
+    "version": "0.1.0"
+  },
+  "servers": [
+    {
+      "url": "https://infojobstech-api.onrender.com/api/offers"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "Get all offers",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/{offerId}": {
+      "get": {
+        "summary": "Retrieve an offer by its ID",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "offerId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "404": {
+            "description": "Offer not found"
+          }
+        }
+      }
+    },
+    "/stack/{stack}": {
+      "get": {
+        "summary": "Get a sorted array of skills given a stack",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "stack",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  }
+}
