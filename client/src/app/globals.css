@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
+    sans-serif, Apple Color Emoji, Segoe UI Emoji;
+}
+
+:root {
+  --max-width: 1000px;
+}
+
+@layer components {
+  .btn {
+    @apply flex gap-2 py-2 px-3 border border-primaryDark rounded-md shadow-sm bg-white text-black hover:bg-primaryDark hover:text-white focus:bg-primaryDark focus:text-white transition-all duration-200 ease-in-out cursor-pointer text-center justify-center hover:no-underline focus:no-underline;
+  }
+}
+
+.container-wrapper {
+  width: clamp(min(75ch, 100% - 4rem), 100%, var(--max-width));
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
